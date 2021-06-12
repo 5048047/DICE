@@ -26,7 +26,7 @@ document.getElementById('current--1').textContent = '0';
 
 
 
-document.querySelector('.btn--roll').addEventListener('click', function(){
+document.querySelector('.btn--roll').addEventListener('click', function roll(){
 	//1. Random number
 
 	var dice = Math.floor(Math.random() * 6) + 1 ; 
@@ -69,6 +69,16 @@ document.querySelector('.btn--roll').addEventListener('click', function(){
 }
 );
 
+document.querySelector('.btn--new').addEventListener('click' , function(){
+
+	document.querySelector('.dice').style.display = 'none';
+
+	document.getElementById('score--0').textContent = '0';
+	document.getElementById('score--1').textContent = '0';
+	document.getElementById('current--0').textContent = '0';
+	document.getElementById('current--1').textContent = '0';
+	roll();
+});
 
 
 
