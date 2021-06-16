@@ -10,7 +10,7 @@ that , it's the next player's turn
 
 */
 
-var scores , roundScore , activePlayer;
+var scores , roundScore , activePlayer , gamePlaying;
 
 init();
 
@@ -20,6 +20,8 @@ init();
 
 
 document.querySelector('.btn--roll').addEventListener('click', function roll(){
+	if(gamePlaying){
+
 	//1. Random number
 
 	var dice = Math.floor(Math.random() * 6) + 1 ; 
@@ -45,13 +47,15 @@ document.querySelector('.btn--roll').addEventListener('click', function roll(){
 	 	//NextPlayer
 		nextPlayer();
 	}
+}
 
 }
 );
 
 document.querySelector('.btn--hold').addEventListener('click' , function(){
-	// Add CURRENT score to GLOBAL score
+	if(gamePlaying){
 
+		// Add CURRENT score to GLOBAL score
 	scores[activePlayer] += roundScore;  //scores[activePlayer] = scores[activePlayer] + roundScore; (SAME AS ABOVE)
 
 	// Update the UI
@@ -65,15 +69,14 @@ document.querySelector('.btn--hold').addEventListener('click' , function(){
 		document.querySelector('.dice').style.display = 'none';
 		document.querySelector('.player--' + activePlayer).classList.add('player--winner');
 		document.querySelector('.player--' + activePlayer).classList.remove('player--active');
-
+		gamePlaying = false;
 	}
 	else {
 		//NextPlayer
 		nextPlayer();
 	}
 
-	
-
+}
 });
 
 function nextPlayer(){
@@ -103,6 +106,7 @@ function init(){
 	scores = [0,0];
 	roundScore = 0;
 	activePlayer = 0;
+	gamePlaying = true;
 
 	document.querySelector('.dice').style.display = 'none';
 
