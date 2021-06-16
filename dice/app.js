@@ -131,22 +131,6 @@ function init(){
 
 }
 
-// document.querySelector('.btn--new').addEventListener('click' , function() {
-
-// 	document.querySelector('.dice').style.display = 'none';
-
-// 	document.getElementById('score--0').textContent = '0';
-// 	document.getElementById('score--1').textContent = '0';
-// 	document.getElementById('current--0').textContent = '0';
-// 	document.getElementById('current--1').textContent = '0';
-// 	roll();
-// });
-
-
-
-
-// document.querySelector('#current--' + activePlayer).innerHTML = "<em>" + dice + '<em>'
-// var x = document.querySelector('#score--0').textContent;
 
 
 
